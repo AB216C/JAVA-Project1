@@ -31,11 +31,22 @@ public class Objective2 {
         System.out.println("Main Sentence is as follows:");
         System.out.println(mainSentence);
 
-        System.out.println("=================================================================================");
-
-        mainSentence.reverse();
-
         System.out.println("Reversed Sentence is as follows:");
-        System.out.println(mainSentence);
+        String[] words = sentence.split(" ");
+        String findings = "";
+
+        for(String word:words){
+            String reversedWord = "";
+            for(int i=word.length()-1; i>=0; i--) {
+                reversedWord += word.charAt(i);
+
+            }
+
+            findings += reversedWord + " ";
+        }
+
+        System.out.println(findings);
+
+
     }
 }

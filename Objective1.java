@@ -16,10 +16,7 @@ Check for an Even Number: Check if the array contains any even number, and print
 
 
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Objective1 {
     public static void main(String[] args) {
@@ -59,7 +56,16 @@ public class Objective1 {
         System.out.println("Array of entered Integers is as follows:");
         System.out.println(Arrays.toString(entries));
 
+        System.out.println("The reversed array as follows:");
+        for( int index=0; index<entries.length/2; index++) {
 
+            int num = entries[index];
+            entries[index]=entries[entries.length-1-index];
+            entries[entries.length-1-index] = num;
+        };
+        System.out.println(Arrays.toString(entries));
+
+        System.out.println("===========================================================================================");
         for(int num:entries) {
             if(num%2==0) {
                 System.out.println(num +":Even Number");
@@ -68,30 +74,38 @@ public class Objective1 {
             }
         }
 
-        ArrayList<Integer> entriesList = new ArrayList<>();
         int sum = 0;
         for(int entry: entries) {
-            entriesList.add(entry);
             sum += entry;
         }
 
         System.out.println("=======================================================================================");
 
-        System.out.println("Converted to ArrayList as follows: "+entriesList+" ");
         System.out.println("Sum of integers in the array: "+sum);
 
-        Collections.sort(entriesList);
 
-        System.out.println("=======================================================================================");
+        Arrays.sort(entries);
 
-        System.out.println("Minimum or Lowest number in a list:");
-        System.out.println(entriesList.get(0));
+        System.out.println("Sorted array as follows:");
+        System.out.println(Arrays.toString(entries));
 
-        System.out.println("Maximum or Largest Number in a list:");
-        System.out.println(entriesList.get(entriesList.size()-1));
+        int min_num = entries[0];
+        int max_num = entries[0];
 
-        Collections.reverse(entriesList);
-        System.out.println("Reversed Array:" + entriesList);
+
+        for(int index=0; index<entries.length; index++) {
+            if(entries[index]<min_num) {
+                min_num = entries[index];
+            }
+
+            if(entries[index]>max_num) {
+                max_num = entries[index];
+            }
+        };
+
+        System.out.println("Minimum value in the array:" + min_num);
+        System.out.println("Maximum value in the array:" + max_num);
+
 
         }
 
