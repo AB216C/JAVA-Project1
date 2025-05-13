@@ -21,7 +21,7 @@ public class Objective2 {
 //
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter your favorite quote");
+        System.out.println("Enter a sentence:");
         String sentence = scanner.nextLine();
 
         StringBuilder stringB = new StringBuilder();
