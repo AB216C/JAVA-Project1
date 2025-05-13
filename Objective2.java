@@ -18,35 +18,59 @@ import java.util.Scanner;
 
 public class Objective2 {
     public static void main(String[] args) {
-
+//
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter your favorite quote");
         String sentence = scanner.nextLine();
 
-        StringBuilder mainSentence = new StringBuilder();
+        StringBuilder stringB = new StringBuilder();
 
-        mainSentence.append(sentence);
+        stringB.append(sentence);
 
         System.out.println("Main Sentence is as follows:");
-        System.out.println(mainSentence);
+        System.out.println(stringB);
 
-        System.out.println("Reversed Sentence is as follows:");
-        String[] words = sentence.split(" ");
-        String findings = "";
+       // Reversing individual word using Stringbuilder class
 
-        for(String word:words){
-            String reversedWord = "";
-            for(int i=word.length()-1; i>=0; i--) {
-                reversedWord += word.charAt(i);
+        //STEP 1:Changing a string into words
 
-            }
+        String[] words =  stringB.toString().split(" ");
 
-            findings += reversedWord + " ";
+        //STEP2: Create an empty StringBuilder class to store the final results
+
+        StringBuilder finalResult = new StringBuilder();
+
+        for(String word:words) {
+            // STEP3: Accessing individual word
+            StringBuilder individualWord = new StringBuilder(word);
+
+            //FINAL: Reverse individual word
+            individualWord.reverse();
+
+            finalResult.append(individualWord + " ");
         }
 
-        System.out.println(findings);
+        System.out.println("Reversed sentence as follows:");
+        System.out.println(finalResult);
 
+
+        //Reversing individual words using for loop
+//        System.out.println("Reversed Sentence is as follows:");
+//        String[] words = sentence.split(" ");
+//        String findings = "";
+//
+//        for(String word:words){
+//            String reversedWord = "";
+//            for(int i=word.length()-1; i>=0; i--) {
+//                reversedWord += word.charAt(i);
+//
+//            }
+//
+//            findings += reversedWord + " ";
+//        }
+//
+//        System.out.println(findings);
 
     }
 }
